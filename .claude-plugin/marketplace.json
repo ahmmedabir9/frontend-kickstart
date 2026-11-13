@@ -6,7 +6,7 @@
       "name": "frontend-kickstart",
       "source": "./",
       "description": "Interview-driven React app starter: tooling, design system, and AI+human docs.",
-      "version": "0.1.0"
+      "version": "0.1.1"
     }
   ]
 }

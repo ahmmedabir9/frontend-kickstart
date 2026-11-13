@@ -29,11 +29,24 @@ Turn "create a React app" into a production-ready project with the user's own br
 This is a live, one-at-a-time conversation, not a form.
 
 1. **Ask exactly ONE question per turn.** Never print a list of questions, never number several questions in one message, and never show "reply in one line" examples. After asking, stop and wait for the answer.
-2. **Use the AskUserQuestion tool with a single question per call** (2 to 4 options, the recommended option first and labeled "(Recommended)"). The user can always pick "Other" and type their own answer. If AskUserQuestion is not available, ask one plain-text question with its options, then stop and wait.
-3. **Open-ended answers** (app name, a hex color): ask as a plain-text question and wait. Suggest one example, for instance "What should the app be called? For example: acme-dashboard".
+2. **Ask in plain text with a NUMBERED list of options, so the user can answer with just a number.** Do not use the AskUserQuestion tool and do not use bullet points for options. Put the recommended option first, labeled "(Recommended)", and add one short explanation per option when it helps. Always add a last numbered option "Other (type your own answer)" when a custom answer makes sense. Use this exact shape:
+
+   ```
+   Question 2 of 6: What kind of app is it? (This decides the starter layout.)
+
+   1. Admin dashboard (Recommended)
+   2. SaaS product
+   3. Marketing site
+   4. Internal tool
+   5. Other (type your own answer)
+
+   Reply with a number.
+   ```
+   Numbers always start at 1 for each new question. Accept a number, the option's text, or a typed custom answer. If the answer is unclear or out of range, ask the same question again once, briefly.
+3. **Open-ended answers** (app name, a hex color): ask as a plain-text question with no options and wait. Suggest one example, for instance "What should the app be called? For example: acme-dashboard". For yes/no questions, still use a numbered list: `1. Yes (Recommended)` and `2. No`.
 4. **Acknowledge and move on.** After each answer, reply with at most one short line ("Got it, an admin dashboard.") and ask the next question. Do not repeat earlier answers back every time.
 5. **Show progress** in the question text, for example "Question 3 of 6". In Detailed mode, use the section name instead ("Brand, 2 of 8").
-6. **Offer an exit.** If the user answers "defaults" or "you decide" to any question, use the recommended answer for it and all remaining questions in that round.
+6. **Offer an exit.** If the user answers "defaults" or "you decide" to any question, use the recommended answer for it and all remaining questions in that round. Mention this once, at the very first question only ("Tip: reply 'defaults' any time to accept the recommended answers.").
 7. **Don't ask what you can detect.** Detect the package manager (pnpm if installed, otherwise npm) and Node version yourself. Do not ask about them.
 8. **Adapt.** Skip questions that earlier answers already settled (for example, no brand questions if the user declined a brand guideline).
 
