@@ -24,7 +24,34 @@ Turn "create a React app" into a production-ready project with the user's own br
 
 ## Phase 1: Interview
 
-Use AskUserQuestion, 2 to 4 questions per round. Start by asking **Quick** (about 6 questions, defaults for the rest) or **Detailed**. Skip rounds that don't apply.
+### How to run the interview (strict rules)
+
+This is a live, one-at-a-time conversation, not a form.
+
+1. **Ask exactly ONE question per turn.** Never print a list of questions, never number several questions in one message, and never show "reply in one line" examples. After asking, stop and wait for the answer.
+2. **Use the AskUserQuestion tool with a single question per call** (2 to 4 options, the recommended option first and labeled "(Recommended)"). The user can always pick "Other" and type their own answer. If AskUserQuestion is not available, ask one plain-text question with its options, then stop and wait.
+3. **Open-ended answers** (app name, a hex color): ask as a plain-text question and wait. Suggest one example, for instance "What should the app be called? For example: acme-dashboard".
+4. **Acknowledge and move on.** After each answer, reply with at most one short line ("Got it, an admin dashboard.") and ask the next question. Do not repeat earlier answers back every time.
+5. **Show progress** in the question text, for example "Question 3 of 6". In Detailed mode, use the section name instead ("Brand, 2 of 8").
+6. **Offer an exit.** If the user answers "defaults" or "you decide" to any question, use the recommended answer for it and all remaining questions in that round.
+7. **Don't ask what you can detect.** Detect the package manager (pnpm if installed, otherwise npm) and Node version yourself. Do not ask about them.
+8. **Adapt.** Skip questions that earlier answers already settled (for example, no brand questions if the user declined a brand guideline).
+
+### Question 1 is always: Quick or Detailed?
+- **Quick (Recommended):** 6 questions, sensible defaults for everything else.
+- **Detailed:** every round below, one question at a time.
+
+### Quick mode: the 6 questions, in order
+1. App name (open-ended).
+2. What kind of app is it? (Admin dashboard / SaaS product / Marketing site / Internal tool.)
+3. Foundation: Vite + React + TypeScript + Tailwind (Recommended) / Next.js + Tailwind.
+4. Guardrails: all recommended checks on (ESLint, Prettier, Git hooks, tests, 250-line file limit) / Let me choose each.
+5. Brand color: do you have a main brand color? (Yes, I'll type it / No, help me pick a mood.) If no, ask one mood question.
+6. Light mode, dark mode, or both? (Both is recommended.)
+
+Everything not asked in Quick mode uses the recommended default shown below. Then go straight to Confirm.
+
+### Detailed mode: the rounds below, one question at a time. Skip rounds that don't apply.
 
 ### Round 1: The project (always)
 - App name (also used for the folder and package name).
