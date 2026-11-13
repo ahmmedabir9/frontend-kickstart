@@ -1,6 +1,6 @@
 # Frontend Kickstart
 
-A Claude Code skill that starts a new React front-end app the right way. It asks a few plain-language questions about your tools, brand, and conventions, then builds a production-ready project with your own look and feel.
+A Claude Code plugin that starts a new React front-end app the right way. It asks a few plain-language questions, one at a time, about your tools, brand, and conventions, then builds a production-ready project with your own look and feel.
 
 ## What you get
 
@@ -12,27 +12,38 @@ A Claude Code skill that starts a new React front-end app the right way. It asks
 
 ## Install
 
-Clone this repo into your Claude Code skills folder.
+In Claude Code:
 
-Personal (all projects):
-
-```bash
-git clone https://github.com/ahmmedabir9/frontend-kickstart.git ~/.claude/skills/frontend-kickstart
+```
+/plugin marketplace add ahmmedabir9/frontend-kickstart
+/plugin install frontend-kickstart@frontend-kickstart
 ```
 
-Single project:
+Restart Claude Code if the skill doesn't show up right away.
 
-```bash
-git clone https://github.com/ahmmedabir9/frontend-kickstart.git .claude/skills/frontend-kickstart
+## Update
+
 ```
+/plugin marketplace update frontend-kickstart
+```
+
+Then update the plugin from the `/plugin` menu, and restart Claude Code.
 
 ## Use
 
-In an empty folder, open Claude Code and say something like:
+In an empty folder, open Claude Code and say:
 
 > Start a new React app with frontend-kickstart.
 
-Claude will ask whether you want a Quick or Detailed interview, then build the project.
+Or run `/frontend-kickstart:frontend-kickstart`. Claude asks whether you want a Quick or Detailed interview, then builds the project.
+
+## Develop
+
+The skill lives in `skills/frontend-kickstart/SKILL.md`. To test local changes without publishing:
+
+```
+claude --plugin-dir /path/to/frontend-kickstart
+```
 
 ## Status
 

@@ -1,0 +1,9 @@
+{
+  "name": "frontend-kickstart",
+  "version": "0.1.0",
+  "description": "Start a new React front-end app: a plain-language interview, then a production-ready scaffold with tooling, design system, and docs for humans and AI.",
+  "author": { "name": "Abir", "url": "https://github.com/ahmmedabir9" },
+  "homepage": "https://github.com/ahmmedabir9/frontend-kickstart",
+  "repository": "https://github.com/ahmmedabir9/frontend-kickstart",
+  "keywords": ["react", "frontend", "scaffold", "design-system", "eslint", "boilerplate"]
+}
